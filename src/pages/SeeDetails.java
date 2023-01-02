@@ -50,6 +50,14 @@ public final class SeeDetails extends Page {
             Commands.error(output);
             return;
         }
+
+        for (Movie movie : currentUser.getPurchasedMovies()) {
+            if (movie.getName().compareTo(currentMovie.getName()) == 0) {
+                Commands.error(output);
+                return;
+            }
+        }
+
         if (currentUser.getCredentials().getAccountType().compareTo("premium") == 0) {
             if (currentUser.getNumFreePremiumMovies() > 0) {
                 currentUser.setNumFreePremiumMovies(currentUser.getNumFreePremiumMovies() - 1);
@@ -93,7 +101,16 @@ public final class SeeDetails extends Page {
         if (currentMovie == null || !currentUser.getPurchasedMovies().contains(currentMovie)) {
             Commands.error(output);
         } else {
-            currentUser.getWatchedMovies().add(currentMovie);
+            boolean alreadyWatched = false;
+            for (Movie movie : currentUser.getWatchedMovies()) {
+                if (movie.getName().compareTo(currentMovie.getName()) == 0) {
+                    alreadyWatched = true;
+                    break;
+                }
+            }
+            if (!alreadyWatched) {
+                currentUser.getWatchedMovies().add(currentMovie);
+            }
             ArrayList<Movie> newMovies = new ArrayList<>();
             newMovies.add(new Movie(currentMovie));
             Commands.success(Session.getInstance().getCurrentUser(), newMovies,
@@ -130,15 +147,34 @@ public final class SeeDetails extends Page {
                 || rate > 5 || rate < 0) {
             Commands.error(output);
         } else {
-            currentMovie.setSumRatings(currentMovie.getSumRatings() + rate);
-            currentMovie.setNumRatings(currentMovie.getNumRatings() + 1);
-            currentMovie.setRating((double) currentMovie.getSumRatings()
-                    / currentMovie.getNumRatings());
-            currentUser.getRatedMovies().add(currentMovie);
+            if (currentUser.getOldRatings().get(currentMovie.getName()) != null) {
+                int oldRating = currentUser.getOldRatings().get(currentMovie.getName());
+                currentMovie.setSumRatings(currentMovie.getSumRatings() - oldRating + rate);
+                currentMovie.setRating((double) currentMovie.getSumRatings()
+                        / currentMovie.getNumRatings());
+            } else {
+                currentMovie.setSumRatings(currentMovie.getSumRatings() + rate);
+                currentMovie.setNumRatings(currentMovie.getNumRatings() + 1);
+                currentMovie.setRating((double) currentMovie.getSumRatings()
+                        / currentMovie.getNumRatings());
+                currentUser.getRatedMovies().add(currentMovie);
+            }
             ArrayList<Movie> newMovies = new ArrayList<>();
             newMovies.add(new Movie(currentMovie));
             Commands.success(Session.getInstance().getCurrentUser(), newMovies,
                     output);
+
+            currentUser.getOldRatings().put(currentMovie.getName(), rate);
+        }
+    }
+
+    public void subscribe(final String subscribedGenre, final User currentUser,
+                          final ArrayNode output) {
+        if (!currentMovie.getGenres().contains(subscribedGenre)
+                || currentUser.getSubscriptions().contains(subscribedGenre)) {
+            Commands.error(output);
+        } else {
+            currentUser.getSubscriptions().add(subscribedGenre);
         }
     }
 }

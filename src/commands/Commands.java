@@ -29,6 +29,14 @@ public final class Commands {
         if (nextPage == null) {
             error(output);
         } else {
+            if (Session.getInstance().getCurrentPage().getName().compareTo("logout") == 0) {
+                Session.getInstance().getPageHistory().clear();
+            } else {
+                String validPages = "authenticated movies see details upgrades";
+                if (validPages.contains(Session.getInstance().getCurrentPage().getName())) {
+                    Session.getInstance().getPageHistory().add(Session.getInstance().getCurrentPage());
+                }
+            }
             nextPage.changePage(action, output);
         }
     }
@@ -64,10 +72,32 @@ public final class Commands {
                         like(Session.getInstance().getCurrentUser(), output);
                 case "rate" -> ((SeeDetails) Session.getInstance().getCurrentPage()).
                         rate(action.getRate(), Session.getInstance().getCurrentUser(), output);
+                case "subscribe" -> ((SeeDetails) Session.getInstance().getCurrentPage()).
+                        subscribe(action.getSubscribedGenre(), Session.getInstance().
+                                getCurrentUser(), output);
                 default -> throw new IllegalStateException("Unexpected value: "
                         + action.getFeature());
             }
         }
+    }
+
+    public static void back(final ActionInput action, final ArrayNode output) {
+        if (Session.getInstance().getPageHistory().empty()) {
+            Commands.error(output);
+        } else {
+            Page nextPage = Session.getInstance().getPageHistory().pop();
+            nextPage.changePage(action, output);
+        }
+    }
+
+    public static void database(final ActionInput action, final ArrayNode output) {
+        switch (action.getFeature()) {
+            case "add" -> Database.add(output);
+            case "delete" -> Database.delete(action.getDeletedMovie(), output);
+            default -> throw new IllegalStateException("Unexpected value: "
+                    + action.getFeature());
+        }
+
     }
 
     /**

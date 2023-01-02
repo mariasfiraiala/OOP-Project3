@@ -10,8 +10,10 @@ import input.UserInput;
 import info.Movie;
 import info.User;
 import pages.PageHierarchy;
+import pages.SeeDetails;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public final class Session {
     private static Session instance = null;
@@ -19,6 +21,7 @@ public final class Session {
     private ArrayList<User> allUsers = new ArrayList<User>();
     private User currentUser;
     private Page currentPage = PageHierarchy.build();
+    private Stack<Page> pageHistory = new Stack<Page>();
     private Session() { }
 
     /**
@@ -56,6 +59,14 @@ public final class Session {
         this.currentPage = currentPage;
     }
 
+    public Stack<Page> getPageHistory() {
+        return pageHistory;
+    }
+
+    public void setPageHistory(Stack<Page> pageHistory) {
+        this.pageHistory = pageHistory;
+    }
+
     /**
      * creates lists for all the users and movies in the system, based on the input
      * @param data the input from which we extract the needed info
@@ -79,6 +90,8 @@ public final class Session {
             switch (action.getType()) {
                 case "change page" -> Commands.changePage(action, output);
                 case "on page" -> Commands.onPage(action, output);
+                case "back" -> Commands.back(action, output);
+                case "database" -> Commands.database(action, output);
                 default -> throw new IllegalStateException("Unexpected value: " + action.getType());
             }
         }

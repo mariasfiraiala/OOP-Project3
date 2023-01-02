@@ -5,16 +5,22 @@ import commands.Commands;
 import input.UserInput;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public final class User extends UserInput {
     private int tokensCount;
     private int numFreePremiumMovies = 15;
     @JsonIgnore
     private ArrayList<Movie> visibleMovies = new ArrayList<Movie>();
+    @JsonIgnore
+    private ArrayList<String> subscriptions = new ArrayList<String>();
+    @JsonIgnore
+    private HashMap<String, Integer> oldRatings = new HashMap<>();
     private ArrayList<Movie> purchasedMovies = new ArrayList<Movie>();
     private ArrayList<Movie> watchedMovies = new ArrayList<Movie>();
     private ArrayList<Movie> likedMovies = new ArrayList<Movie>();
     private ArrayList<Movie> ratedMovies = new ArrayList<Movie>();
+    private ArrayList<Notification> notifications = new ArrayList<Notification>();
 
     public User() { }
 
@@ -88,5 +94,29 @@ public final class User extends UserInput {
 
     public void setNumFreePremiumMovies(final int numFreePremiumMovies) {
         this.numFreePremiumMovies = numFreePremiumMovies;
+    }
+
+    public ArrayList<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(ArrayList<Notification> notifications) {
+        this.notifications = notifications;
+    }
+
+    public ArrayList<String> getSubscriptions() {
+        return subscriptions;
+    }
+
+    public void setSubscriptions(ArrayList<String> subscriptions) {
+        this.subscriptions = subscriptions;
+    }
+
+    public HashMap<String, Integer> getOldRatings() {
+        return oldRatings;
+    }
+
+    public void setOldRatings(HashMap<String, Integer> oldRatings) {
+        this.oldRatings = oldRatings;
     }
 }

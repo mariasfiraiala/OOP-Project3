@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MovieInput {
     private String name;
-    private int year;
+    private String year;
     private int duration;
     private ArrayList<String> genres = new ArrayList<String>();
     private ArrayList<String> actors = new ArrayList<String>();
@@ -28,11 +28,11 @@ public class MovieInput {
         this.name = name;
     }
 
-    public final int getYear() {
+    public final String getYear() {
         return year;
     }
 
-    public final void setYear(final int year) {
+    public final void setYear(final String year) {
         this.year = year;
     }
 

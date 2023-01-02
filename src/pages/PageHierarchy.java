@@ -19,7 +19,7 @@ public final class PageHierarchy {
         Movies movies = new Movies("movies",
                 List.of("search", "filter"));
         SeeDetails seeDetails = new SeeDetails("see details",
-                List.of("purchase", "watch", "like", "rate"));
+                List.of("purchase", "watch", "like", "rate", "subscribe"));
         Upgrades upgrades = new Upgrades("upgrades",
                 List.of("buy premium account", "buy tokens"));
         Logout logout = new Logout("logout",

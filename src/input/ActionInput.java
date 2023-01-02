@@ -1,5 +1,7 @@
 package input;
 
+import info.Movie;
+
 public final class ActionInput {
     private String type;
     private String page;
@@ -11,6 +13,9 @@ public final class ActionInput {
     private String count;
     private int rate;
     private String objectType;
+    private String subscribedGenre;
+    private MovieInput addedMovie;
+    private String deletedMovie;
 
     public ActionInput() {
 
@@ -70,5 +75,29 @@ public final class ActionInput {
 
     public int getRate() {
         return rate;
+    }
+
+    public String getSubscribedGenre() {
+        return subscribedGenre;
+    }
+
+    public void setSubscribedGenre(String subscribedGenre) {
+        this.subscribedGenre = subscribedGenre;
+    }
+
+    public MovieInput getAddedMovie() {
+        return addedMovie;
+    }
+
+    public void setAddedMovie(MovieInput addedMovie) {
+        this.addedMovie = addedMovie;
+    }
+
+    public String getDeletedMovie() {
+        return deletedMovie;
+    }
+
+    public void setDeletedMovie(String deletedMovie) {
+        this.deletedMovie = deletedMovie;
     }
 }
