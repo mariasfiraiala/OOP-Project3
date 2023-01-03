@@ -8,9 +8,10 @@ Starting audit...
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/Main.java:12:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Commands.java:38: Line is longer than 100 characters (found 103). [LineLength]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Commands.java:85:5: Missing a Javadoc comment. [MissingJavadocMethod]
-[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Commands.java:94:5: Missing a Javadoc comment. [MissingJavadocMethod]
-[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Commands.java:164: Line is longer than 100 characters (found 110). [LineLength]
-[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Commands.java:164:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Commands.java:90: Line is longer than 100 characters (found 102). [LineLength]
+[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Commands.java:96:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Commands.java:166: Line is longer than 100 characters (found 110). [LineLength]
+[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Commands.java:166:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Recommendation.java:6:17: Using the '.*' form of import should be avoided - java.util.*. [AvoidStarImport]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Recommendation.java:11:5: Class 'Recommendation' looks like designed for extension (can be subclassed), but the method 'prepareMovies' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Recommendation' final or making the method 'prepareMovies' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/commands/Recommendation.java:11:5: Missing a Javadoc comment. [MissingJavadocMethod]
@@ -61,4 +62,4 @@ Starting audit...
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:103: Line is longer than 100 characters (found 109). [LineLength]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:105: Line is longer than 100 characters (found 119). [LineLength]
 Audit done.
-Checkstyle ends with 61 errors.
+Checkstyle ends with 62 errors.

@@ -33,7 +33,7 @@ public final class Commands {
             if (Session.getInstance().getCurrentPage().getName().compareTo("logout") == 0) {
                 Session.getInstance().getPageHistory().clear();
             } else {
-                String validPages = "authenticated movies see details upgrades";
+                String validPages = "movies see details upgrades";
                 if (validPages.contains(Session.getInstance().getCurrentPage().getName())) {
                     Session.getInstance().getPageHistory().add(Session.getInstance().getCurrentPage());
                 }
@@ -87,7 +87,9 @@ public final class Commands {
             Commands.error(output);
         } else {
             Page nextPage = Session.getInstance().getPageHistory().pop();
-            nextPage.changePage(action, output);
+            if (Session.getInstance().getCurrentPage().getName().compareTo(nextPage.getName()) != 0) {
+                nextPage.changePage(action, output);
+            }
         }
     }
 
