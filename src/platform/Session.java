@@ -97,7 +97,9 @@ public final class Session {
                 default -> throw new IllegalStateException("Unexpected value: " + action.getType());
             }
         }
+    }
 
+    public void finalRecommendation(final ArrayNode output) {
         if (currentUser != null && currentUser.getCredentials().getAccountType().compareTo("premium") == 0) {
             Recommendation recommendation = new Recommendation();
             currentUser.getNotifications().add(new Notification(recommendation.getRecommendation(), "Recommendation"));

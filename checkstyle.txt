@@ -57,7 +57,8 @@ Starting audit...
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/info/User.java:120:31: Parameter oldRatings should be final. [FinalParameters]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:15:8: Unused import - pages.SeeDetails. [UnusedImports]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:68:32: Parameter pageHistory should be final. [FinalParameters]
-[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:101: Line is longer than 100 characters (found 109). [LineLength]
-[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:103: Line is longer than 100 characters (found 119). [LineLength]
+[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:102:5: Missing a Javadoc comment. [MissingJavadocMethod]
+[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:103: Line is longer than 100 characters (found 109). [LineLength]
+[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:105: Line is longer than 100 characters (found 119). [LineLength]
 Audit done.
-Checkstyle ends with 60 errors.
+Checkstyle ends with 61 errors.

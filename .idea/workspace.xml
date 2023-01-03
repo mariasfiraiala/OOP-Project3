@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="716ed340-6f59-4be0-add2-5d12509df1e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/commands/Recommendation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ceva4.json" beforeDir="false" afterPath="$PROJECT_DIR$/ceva4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/platform/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platform/Session.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,22 +89,12 @@
       <workItem from="1672666090435" duration="9057000" />
       <workItem from="1672678459425" duration="8498000" />
       <workItem from="1672735730617" duration="732000" />
-      <workItem from="1672740165109" duration="6322000" />
+      <workItem from="1672740165109" duration="6526000" />
+      <workItem from="1672751541857" duration="83000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/platform/Session.java</url>
-          <line>102</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

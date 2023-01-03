@@ -23,6 +23,7 @@ public class Main {
         Session.getInstance().reset();
         Session.getInstance().uploadData(database);
         Session.getInstance().startSession(database.getActions(), output);
+        Session.getInstance().finalRecommendation(output);
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(args[1]), output);
