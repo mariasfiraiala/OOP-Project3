@@ -1885,4 +1885,26 @@
     "ratedMovies" : [ ],
     "notifications" : [ ]
   }
+}, {
+  "error" : null,
+  "currentMoviesList" : null,
+  "currentUser" : {
+    "credentials" : {
+      "name" : "Florin",
+      "password" : "TheWalkingDead",
+      "accountType" : "premium",
+      "country" : "Romania",
+      "balance" : "1337"
+    },
+    "tokensCount" : 0,
+    "numFreePremiumMovies" : 15,
+    "purchasedMovies" : [ ],
+    "watchedMovies" : [ ],
+    "likedMovies" : [ ],
+    "ratedMovies" : [ ],
+    "notifications" : [ {
+      "movieName" : "No recommendation",
+      "message" : "Recommendation"
+    } ]
+  }
 } ]

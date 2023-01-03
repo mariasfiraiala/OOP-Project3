@@ -42,6 +42,7 @@ public final class User extends UserInput {
         this.watchedMovies = Commands.deepCopy(user.watchedMovies);
         this.likedMovies = Commands.deepCopy(user.likedMovies);
         this.ratedMovies = Commands.deepCopy(user.ratedMovies);
+        this.notifications = Commands.deepCopyNotifications(user.notifications);
     }
 
     public ArrayList<Movie> getVisibleMovies() {

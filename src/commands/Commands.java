@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import info.Movie;
+import info.Notification;
 import info.User;
 import input.ActionInput;
 import pages.Login;
@@ -136,7 +137,11 @@ public final class Commands {
                                final ArrayNode output) {
         ObjectNode node = JsonNodeFactory.instance.objectNode();
         node.putPOJO("error", null);
-        node.putPOJO("currentMoviesList", deepCopy(currentMovies));
+        if (currentMovies == null) {
+            node.putPOJO("currentMoviesList", null);
+        } else {
+            node.putPOJO("currentMoviesList", deepCopy(currentMovies));
+        }
         node.putPOJO("currentUser", new User(currentUser));
         output.addPOJO(node);
     }
@@ -154,5 +159,15 @@ public final class Commands {
         }
 
         return newMovies;
+    }
+
+    public static ArrayList<Notification> deepCopyNotifications(final ArrayList<Notification> notifications) {
+        ArrayList<Notification> newNotifications = new ArrayList<Notification>();
+
+        for (Notification notification : notifications) {
+            newNotifications.add(new Notification(notification));
+        }
+
+        return newNotifications;
     }
 }

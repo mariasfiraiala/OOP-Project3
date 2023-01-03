@@ -9,6 +9,11 @@ public class Notification {
         this.message = message;
     }
 
+    public Notification(Notification notification) {
+        this.movieName = notification.movieName;
+        this.message = notification.message;
+    }
+
     public String getMovieName() {
         return movieName;
     }

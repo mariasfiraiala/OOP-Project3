@@ -2,6 +2,8 @@ package platform;
 
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import commands.Commands;
+import commands.Recommendation;
+import info.Notification;
 import pages.Page;
 import input.ActionInput;
 import input.DataInput;
@@ -94,6 +96,12 @@ public final class Session {
                 case "database" -> Commands.database(action, output);
                 default -> throw new IllegalStateException("Unexpected value: " + action.getType());
             }
+        }
+
+        if (currentUser != null && currentUser.getCredentials().getAccountType().compareTo("premium") == 0) {
+            Recommendation recommendation = new Recommendation();
+            currentUser.getNotifications().add(new Notification(recommendation.getRecommendation(), "Recommendation"));
+            Commands.success(currentUser, null, output);
         }
     }
 
