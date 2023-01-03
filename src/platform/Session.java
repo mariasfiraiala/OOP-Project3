@@ -12,7 +12,6 @@ import input.UserInput;
 import info.Movie;
 import info.User;
 import pages.PageHierarchy;
-import pages.SeeDetails;
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -65,7 +64,7 @@ public final class Session {
         return pageHistory;
     }
 
-    public void setPageHistory(Stack<Page> pageHistory) {
+    public void setPageHistory(final Stack<Page> pageHistory) {
         this.pageHistory = pageHistory;
     }
 
@@ -100,9 +99,11 @@ public final class Session {
     }
 
     public void finalRecommendation(final ArrayNode output) {
-        if (currentUser != null && currentUser.getCredentials().getAccountType().compareTo("premium") == 0) {
+        if (currentUser != null && currentUser.getCredentials().getAccountType().
+                compareTo("premium") == 0) {
             Recommendation recommendation = new Recommendation();
-            currentUser.getNotifications().add(new Notification(recommendation.getRecommendation(), "Recommendation"));
+            currentUser.getNotifications().add(new Notification(recommendation.getRecommendation(),
+                    "Recommendation"));
             Commands.success(currentUser, null, output);
         }
     }

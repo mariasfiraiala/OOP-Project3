@@ -9,7 +9,8 @@ import platform.Session;
 import java.io.File;
 import java.io.IOException;
 
-public class Main {
+public final class Main {
+    private Main() { }
     /**
      * gets info from the files and writes back to files
      * @param args the input and output paths

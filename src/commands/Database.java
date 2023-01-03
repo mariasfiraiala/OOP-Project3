@@ -10,8 +10,9 @@ import platform.Session;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Database {
-    public static void add(MovieInput newMovie, ArrayNode output) {
+public final class Database {
+    private Database() { }
+    public static void add(final MovieInput newMovie, final ArrayNode output) {
         for (Movie movie : Session.getInstance().getAllMovies()) {
             if (movie.getName().compareTo(newMovie.getName()) == 0) {
                 Commands.error(output);
@@ -43,7 +44,7 @@ public class Database {
         }
     }
 
-    public static void delete(String movieName, ArrayNode output) {
+    public static void delete(final String movieName, final ArrayNode output) {
         boolean exists = false;
         for (Movie movie : Session.getInstance().getAllMovies()) {
             if (movie.getName().compareTo(movieName) == 0) {
@@ -60,7 +61,7 @@ public class Database {
                 deleteByName(movieName, user.getVisibleMovies());
 
                 Iterator<Movie> movie = user.getPurchasedMovies().iterator();
-                while(movie.hasNext()) {
+                while (movie.hasNext()) {
                     Movie next = movie.next();
                     if (next.getName().compareTo(movieName) == 0) {
                         if (user.getCredentials().getAccountType().compareTo("premium") == 0) {
@@ -76,11 +77,12 @@ public class Database {
                 deleteByName(movieName, user.getLikedMovies());
                 deleteByName(movieName, user.getRatedMovies());
             }
-            Session.getInstance().getCurrentUser().getNotifications().add(new Notification(movieName, "DELETE"));
+            Session.getInstance().getCurrentUser().getNotifications().add(
+                    new Notification(movieName, "DELETE"));
         }
     }
 
-    public static void deleteByName(String movieName, ArrayList<Movie> movies) {
+    public static void deleteByName(final String movieName, final ArrayList<Movie> movies) {
         movies.removeIf(next -> next.getName().compareTo(movieName) == 0);
     }
 }

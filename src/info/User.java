@@ -101,7 +101,7 @@ public final class User extends UserInput {
         return notifications;
     }
 
-    public void setNotifications(ArrayList<Notification> notifications) {
+    public void setNotifications(final ArrayList<Notification> notifications) {
         this.notifications = notifications;
     }
 
@@ -109,7 +109,7 @@ public final class User extends UserInput {
         return subscriptions;
     }
 
-    public void setSubscriptions(ArrayList<String> subscriptions) {
+    public void setSubscriptions(final ArrayList<String> subscriptions) {
         this.subscriptions = subscriptions;
     }
 
@@ -117,7 +117,7 @@ public final class User extends UserInput {
         return oldRatings;
     }
 
-    public void setOldRatings(HashMap<String, Integer> oldRatings) {
+    public void setOldRatings(final HashMap<String, Integer> oldRatings) {
         this.oldRatings = oldRatings;
     }
 }

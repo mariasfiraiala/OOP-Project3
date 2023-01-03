@@ -37,7 +37,8 @@ public final class Commands {
                 Page prev = Session.getInstance().getCurrentPage();
                 boolean status = nextPage.changePage(action, output);
                 String validPages = "movies see details upgrades";
-                if (validPages.contains(Session.getInstance().getCurrentPage().getName()) && status) {
+                if (validPages.contains(Session.getInstance().getCurrentPage().getName())
+                        && status) {
                     Session.getInstance().getPageHistory().add(prev);
                 }
             }
@@ -89,7 +90,8 @@ public final class Commands {
             Commands.error(output);
         } else {
             Page nextPage = Session.getInstance().getPageHistory().pop();
-            if (Session.getInstance().getCurrentPage().getName().compareTo(nextPage.getName()) != 0) {
+            if (Session.getInstance().getCurrentPage().getName().compareTo(nextPage.getName())
+                    != 0) {
                 nextPage.changePage(action, output);
             }
         }
@@ -165,7 +167,8 @@ public final class Commands {
         return newMovies;
     }
 
-    public static ArrayList<Notification> deepCopyNotifications(final ArrayList<Notification> notifications) {
+    public static ArrayList<Notification> deepCopyNotifications(final ArrayList<Notification>
+                                                                        notifications) {
         ArrayList<Notification> newNotifications = new ArrayList<Notification>();
 
         for (Notification notification : notifications) {

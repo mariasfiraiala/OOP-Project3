@@ -126,7 +126,8 @@ public final class SeeDetails extends Page {
      * @param output writes to file
      */
     public void like(final User currentUser, final ArrayNode output) {
-        if (currentMovie == null || !currentUser.getWatchedMovies().contains(currentMovie) || currentUser.getLikedMovies().contains(currentMovie)) {
+        if (currentMovie == null || !currentUser.getWatchedMovies().contains(currentMovie)
+                || currentUser.getLikedMovies().contains(currentMovie)) {
             Commands.error(output);
         } else {
             currentMovie.setNumLikes(currentMovie.getNumLikes() + 1);

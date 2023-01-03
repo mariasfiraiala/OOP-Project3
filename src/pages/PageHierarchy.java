@@ -3,7 +3,7 @@ package pages;
 import java.util.List;
 
 public final class PageHierarchy {
-    public PageHierarchy() { }
+    private PageHierarchy() { }
 
     /**
      * constructs the page hierarchy for the website

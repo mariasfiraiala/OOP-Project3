@@ -3,9 +3,13 @@ package commands;
 import info.Movie;
 import platform.Session;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.Set;
 
-public class Recommendation {
+public final class Recommendation {
     private ArrayList<Movie> moviesToChooseFrom = new ArrayList<Movie>();
     private ArrayList<String> preferredGenres = new ArrayList<String>();
     public void prepareMovies() {
@@ -55,9 +59,9 @@ public class Recommendation {
         return "No recommendation";
     }
 
-    public static <K, V extends Comparable<V> > Map<K, V> valueSort(final Map<K, V> map) {
+    public static <K, V extends Comparable<V>> Map<K, V> valueSort(final Map<K, V> map) {
         Comparator<K> valueComparator = new Comparator<K>() {
-            public int compare(K k1, K k2) {
+            public int compare(final K k1, final K k2) {
                 int comp = map.get(k1).compareTo(map.get(k2));
                 if (comp == 0) {
                     return 1;
