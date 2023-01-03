@@ -23,11 +23,12 @@ public final class Movies extends Page {
      * @param action the action that should be performed before changing the page
      * @param output writes in file
      */
-    public void changePage(final ActionInput action, final ArrayNode output) {
+    public boolean changePage(final ActionInput action, final ArrayNode output) {
         selectedMovies = Session.getInstance().getCurrentUser().getVisibleMovies();
         Commands.success(Session.getInstance().getCurrentUser(), selectedMovies,
                 output);
         Session.getInstance().setCurrentPage(this);
+        return true;
     }
 
     /**

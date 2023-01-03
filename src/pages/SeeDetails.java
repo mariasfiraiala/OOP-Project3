@@ -21,7 +21,7 @@ public final class SeeDetails extends Page {
      * @param action the action that should be performed before changing the page
      * @param output writes in file
      */
-    public void changePage(final ActionInput action, final ArrayNode output) {
+    public boolean changePage(final ActionInput action, final ArrayNode output) {
         currentMovie = null;
         for (Movie movie : ((Movies) this.getNextPage("movies")).getSelectedMovies()) {
             if (movie.getName().compareTo(action.getMovie()) == 0) {
@@ -31,12 +31,14 @@ public final class SeeDetails extends Page {
 
         if (currentMovie == null) {
             Commands.error(output);
+            return false;
         } else {
             ArrayList<Movie> newMovies = new ArrayList<>();
             newMovies.add(new Movie(currentMovie));
             Commands.success(Session.getInstance().getCurrentUser(), newMovies,
                     output);
             Session.getInstance().setCurrentPage(this);
+            return true;
         }
     }
 
@@ -124,7 +126,7 @@ public final class SeeDetails extends Page {
      * @param output writes to file
      */
     public void like(final User currentUser, final ArrayNode output) {
-        if (currentMovie == null || !currentUser.getWatchedMovies().contains(currentMovie)) {
+        if (currentMovie == null || !currentUser.getWatchedMovies().contains(currentMovie) || currentUser.getLikedMovies().contains(currentMovie)) {
             Commands.error(output);
         } else {
             currentMovie.setNumLikes(currentMovie.getNumLikes() + 1);

@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="716ed340-6f59-4be0-add2-5d12509df1e5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project3.git/commands/Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Project3.git/commands/Commands.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Logout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Logout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Movies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SeeDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SeeDetails.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +28,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/checker/resources/ref/basic_10.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,17 +69,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test6" type="Application" factoryName="Application">
+    <configuration name="test10" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OOP-Project3.git" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/checker/resources/in/basic_6.json ceva6.json" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/checker/resources/in/basic_10.json ceva10.json" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.checker" />
-      <item itemvalue="Application.test6" />
+      <item itemvalue="Application.test10" />
       <item itemvalue="Application.test1" />
     </list>
   </component>
@@ -90,11 +98,22 @@
       <workItem from="1672678459425" duration="8498000" />
       <workItem from="1672735730617" duration="732000" />
       <workItem from="1672740165109" duration="6526000" />
-      <workItem from="1672751541857" duration="6547000" />
+      <workItem from="1672751541857" duration="9744000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/platform/Session.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

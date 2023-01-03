@@ -20,8 +20,9 @@ public abstract class Page {
      * @param action the action that should be performed before changing the page
      * @param output writes in file
      */
-    public void changePage(final ActionInput action, final ArrayNode output) {
+    public boolean changePage(final ActionInput action, final ArrayNode output) {
         Session.getInstance().setCurrentPage(this);
+        return true;
     }
     public final String getName() {
         return name;

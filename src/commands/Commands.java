@@ -32,13 +32,15 @@ public final class Commands {
         } else {
             if (Session.getInstance().getCurrentPage().getName().compareTo("logout") == 0) {
                 Session.getInstance().getPageHistory().clear();
+                nextPage.changePage(action, output);
             } else {
+                Page prev = Session.getInstance().getCurrentPage();
+                boolean status = nextPage.changePage(action, output);
                 String validPages = "movies see details upgrades";
-                if (validPages.contains(Session.getInstance().getCurrentPage().getName())) {
-                    Session.getInstance().getPageHistory().add(Session.getInstance().getCurrentPage());
+                if (validPages.contains(Session.getInstance().getCurrentPage().getName()) && status) {
+                    Session.getInstance().getPageHistory().add(prev);
                 }
             }
-            nextPage.changePage(action, output);
         }
     }
 

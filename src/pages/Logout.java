@@ -16,8 +16,9 @@ public final class Logout extends Page {
      * @param action the action that should be performed before changing the page
      * @param output writes in file
      */
-    public void changePage(final ActionInput action, final ArrayNode output) {
+    public boolean changePage(final ActionInput action, final ArrayNode output) {
         Session.getInstance().setCurrentPage(this);
         Session.getInstance().setCurrentUser(null);
+        return true;
     }
 }
