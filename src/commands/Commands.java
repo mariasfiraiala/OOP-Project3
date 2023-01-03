@@ -95,7 +95,7 @@ public final class Commands {
 
     public static void database(final ActionInput action, final ArrayNode output) {
         switch (action.getFeature()) {
-            case "add" -> Database.add(output);
+            case "add" -> Database.add(action.getAddedMovie(), output);
             case "delete" -> Database.delete(action.getDeletedMovie(), output);
             default -> throw new IllegalStateException("Unexpected value: "
                     + action.getFeature());

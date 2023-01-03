@@ -2,15 +2,45 @@ package commands;
 
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import info.Movie;
+import info.Notification;
 import info.User;
+import input.MovieInput;
 import platform.Session;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Database {
-    public static void add(ArrayNode output) {
+    public static void add(MovieInput newMovie, ArrayNode output) {
+        for (Movie movie : Session.getInstance().getAllMovies()) {
+            if (movie.getName().compareTo(newMovie.getName()) == 0) {
+                Commands.error(output);
+                return;
+            }
+        }
 
+        Session.getInstance().getAllMovies().add(new Movie(newMovie));
+
+        for (User user : Session.getInstance().getAllUsers()) {
+            boolean isNotBanned = true;
+            for (String banned : newMovie.getCountriesBanned()) {
+                if (banned.compareTo(user.getCredentials().getCountry()) == 0) {
+                    isNotBanned = false;
+                    break;
+                }
+            }
+
+            if (isNotBanned) {
+                user.getVisibleMovies().add(new Movie(newMovie));
+
+                for (String genre : newMovie.getGenres()) {
+                    if (user.getSubscriptions().contains(genre)) {
+                        user.getNotifications().add(new Notification(newMovie.getName(), "ADD"));
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     public static void delete(String movieName, ArrayNode output) {
@@ -46,6 +76,7 @@ public class Database {
                 deleteByName(movieName, user.getLikedMovies());
                 deleteByName(movieName, user.getRatedMovies());
             }
+            Session.getInstance().getCurrentUser().getNotifications().add(new Notification(movieName, "DELETE"));
         }
     }
 
