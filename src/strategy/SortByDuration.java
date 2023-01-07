@@ -5,7 +5,7 @@ import info.Movie;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class SortByDuration implements SortStrategy{
+public final class SortByDuration implements SortStrategy{
     private boolean isIncreasing;
 
     public SortByDuration(boolean isIncreasing) {

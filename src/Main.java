@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import input.DataInput;
+import platform.FacadeSession;
 import platform.Session;
 
 import java.io.File;
@@ -19,12 +20,11 @@ public final class Main {
     public static void main(final String[] args) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         ArrayNode output = objectMapper.createArrayNode();
-        DataInput database = (DataInput) objectMapper.readValue(new File(args[0]), DataInput.class);
+        DataInput database = objectMapper.readValue(new File(args[0]), DataInput.class);
 
-        Session.getInstance().reset();
-        Session.getInstance().uploadData(database);
-        Session.getInstance().startSession(database.getActions(), output);
-        Session.getInstance().finalRecommendation(output);
+        FacadeSession facade = new FacadeSession(Session.getInstance());
+        facade.startSession(database, output);
+        facade.stopSession(output);
 
         ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(args[1]), output);
