@@ -1,5 +1,7 @@
 package platform;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import commands.Commands;
 import commands.Recommendation;
@@ -13,6 +15,8 @@ import info.Movie;
 import info.User;
 import pages.PageHierarchy;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -23,6 +27,11 @@ public final class Session {
     private User currentUser;
     private Page currentPage = PageHierarchy.build();
     private Stack<Page> pageHistory = new Stack<Page>();
+    private ObjectMapper objectMapper;
+    private ArrayNode output;
+    private DataInput database;
+    private ObjectWriter objectWriter;
+
     private Session() { }
 
     /**
@@ -64,30 +73,45 @@ public final class Session {
         return pageHistory;
     }
 
-    public void setPageHistory(final Stack<Page> pageHistory) {
-        this.pageHistory = pageHistory;
+    public ArrayNode getOutput() {
+        return output;
+    }
+
+    public void setOutput(final ArrayNode output) {
+        this.output = output;
+    }
+
+    public DataInput getDatabase() {
+        return database;
+    }
+
+    public void setDatabase(final DataInput database) {
+        this.database = database;
+    }
+
+    public void setupInput(final String inputFile) throws IOException {
+        objectMapper = new ObjectMapper();
+        output = objectMapper.createArrayNode();
+        database = objectMapper.readValue(new File(inputFile), DataInput.class);
     }
 
     /**
      * creates lists for all the users and movies in the system, based on the input
-     * @param data the input from which we extract the needed info
      */
-    public void uploadData(final DataInput data) {
-        for (MovieInput movie : data.getMovies()) {
+    public void uploadData() {
+        for (MovieInput movie : database.getMovies()) {
             allMovies.add(new Movie(movie));
         }
-        for (UserInput user : data.getUsers()) {
+        for (UserInput user : database.getUsers()) {
             allUsers.add(new User(user, allMovies));
         }
     }
 
     /**
      * applies the commands given from the input
-     * @param actions the commands we implement
-     * @param output writes to file
      */
-    public void startSession(final ArrayList<ActionInput> actions, final ArrayNode output) {
-        for (ActionInput action : actions) {
+    public void startSession() {
+        for (ActionInput action : database.getActions()) {
             switch (action.getType()) {
                 case "change page" -> Commands.changePage(action, output);
                 case "on page" -> Commands.onPage(action, output);
@@ -98,7 +122,7 @@ public final class Session {
         }
     }
 
-    public void finalRecommendation(final ArrayNode output) {
+    public void finalRecommendation() {
         if (currentUser != null && currentUser.getCredentials().getAccountType().
                 compareTo("premium") == 0) {
             Recommendation recommendation = new Recommendation();
@@ -113,5 +137,10 @@ public final class Session {
      */
     public void reset() {
         instance = null;
+    }
+
+    public void setupOutput(final String outputFile) throws IOException {
+        objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
+        objectWriter.writeValue(new File(outputFile), output);
     }
 }

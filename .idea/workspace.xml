@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="716ed340-6f59-4be0-add2-5d12509df1e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/platform/FacadeSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Movies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platform/FacadeSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platform/FacadeSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/platform/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platform/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/strategy/SortByDuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategy/SortByDuration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/strategy/SortByRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategy/SortByRating.java" afterDir="false" />
     </list>
@@ -98,7 +100,7 @@
       <workItem from="1672735730617" duration="732000" />
       <workItem from="1672740165109" duration="6526000" />
       <workItem from="1672751541857" duration="11023000" />
-      <workItem from="1673096546608" duration="8995000" />
+      <workItem from="1673096546608" duration="11645000" />
     </task>
     <servers />
   </component>

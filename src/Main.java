@@ -1,13 +1,6 @@
 
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import input.DataInput;
 import platform.FacadeSession;
 import platform.Session;
-
-import java.io.File;
 import java.io.IOException;
 
 public final class Main {
@@ -18,15 +11,8 @@ public final class Main {
      * @throws IOException exception thrown at reading
      */
     public static void main(final String[] args) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        ArrayNode output = objectMapper.createArrayNode();
-        DataInput database = objectMapper.readValue(new File(args[0]), DataInput.class);
-
         FacadeSession facade = new FacadeSession(Session.getInstance());
-        facade.startSession(database, output);
-        facade.stopSession(output);
-
-        ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
-        objectWriter.writeValue(new File(args[1]), output);
+        facade.startSession(args[0]);
+        facade.stopSession(args[1]);
     }
 }

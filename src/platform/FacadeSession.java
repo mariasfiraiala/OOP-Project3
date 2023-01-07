@@ -1,23 +1,24 @@
 package platform;
 
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import input.DataInput;
+import java.io.IOException;
 
-public class FacadeSession {
+public final class FacadeSession {
     private final Session session;
 
-    public FacadeSession(Session session) {
+    public FacadeSession(final Session session) {
         this.session = session;
     }
 
-    public void startSession(DataInput database, ArrayNode output) {
+    public void startSession(final String inputFile) throws IOException {
         Session.getInstance().reset();
-        Session.getInstance().uploadData(database);
-        Session.getInstance().startSession(database.getActions(), output);
+        Session.getInstance().setupInput(inputFile);
+        Session.getInstance().uploadData();
+        Session.getInstance().startSession();
     }
 
-    public void stopSession(ArrayNode output) {
-        Session.getInstance().finalRecommendation(output);
+    public void stopSession(final String outputFile) throws IOException {
+        Session.getInstance().finalRecommendation();
+        Session.getInstance().setupOutput(outputFile);
         Session.getInstance().reset();
     }
 }
