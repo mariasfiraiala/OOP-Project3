@@ -8,7 +8,7 @@ public final class Main {
     /**
      * gets info from the files and writes back to files
      * @param args the input and output paths
-     * @throws IOException exception thrown at reading
+     * @throws IOException exception thrown at reading and writing
      */
     public static void main(final String[] args) throws IOException {
         FacadeSession facade = new FacadeSession(Session.getInstance());

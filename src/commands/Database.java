@@ -12,6 +12,12 @@ import java.util.Iterator;
 
 public final class Database {
     private Database() { }
+
+    /**
+     * adds a new movie to the platform
+     * @param newMovie the new movie to be inserted
+     * @param output writes to file
+     */
     public static void add(final MovieInput newMovie, final ArrayNode output) {
         for (Movie movie : Session.getInstance().getAllMovies()) {
             if (movie.getName().compareTo(newMovie.getName()) == 0) {
@@ -44,6 +50,11 @@ public final class Database {
         }
     }
 
+    /**
+     * deletes a movie from the platform
+     * @param movieName the movie to be deleted
+     * @param output writes to file
+     */
     public static void delete(final String movieName, final ArrayNode output) {
         boolean exists = false;
         for (Movie movie : Session.getInstance().getAllMovies()) {
@@ -82,6 +93,11 @@ public final class Database {
         }
     }
 
+    /**
+     * deletes a movie from an array based on its name
+     * @param movieName the name of the movie to be removed
+     * @param movies the array of movies from which we delete elements
+     */
     public static void deleteByName(final String movieName, final ArrayList<Movie> movies) {
         movies.removeIf(next -> next.getName().compareTo(movieName) == 0);
     }

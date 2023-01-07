@@ -85,6 +85,11 @@ public final class Commands {
         }
     }
 
+    /**
+     * the "back" action implementation
+     * @param action contains the info about what should be done
+     * @param output writes to file
+     */
     public static void back(final ActionInput action, final ArrayNode output) {
         if (Session.getInstance().getPageHistory().empty()) {
             Commands.error(output);
@@ -97,6 +102,11 @@ public final class Commands {
         }
     }
 
+    /**
+     * the "database" action implementation
+     * @param action contains the info about what should be done
+     * @param output writes to file
+     */
     public static void database(final ActionInput action, final ArrayNode output) {
         switch (action.getFeature()) {
             case "add" -> Database.add(action.getAddedMovie(), output);
@@ -167,6 +177,11 @@ public final class Commands {
         return newMovies;
     }
 
+    /**
+     * deep copies an array of notifications
+     * @param notifications the notifications we want copied
+     * @return the newly created list
+     */
     public static ArrayList<Notification> deepCopyNotifications(final ArrayList<Notification>
                                                                         notifications) {
         ArrayList<Notification> newNotifications = new ArrayList<Notification>();

@@ -171,6 +171,12 @@ public final class SeeDetails extends Page {
         }
     }
 
+    /**
+     * subscribes the current user to the desired genre
+     * @param subscribedGenre the genre the user wants to subscribe to
+     * @param currentUser the user performing the action
+     * @param output writes to file
+     */
     public void subscribe(final String subscribedGenre, final User currentUser,
                           final ArrayNode output) {
         if (!currentMovie.getGenres().contains(subscribedGenre)

@@ -12,6 +12,10 @@ public final class SortByRating implements SortStrategy {
         this.isIncreasing = isIncreasing;
     }
 
+    /**
+     * sorts an array of movies based on their rating
+     * @param movies the array to be sorted
+     */
     public void sort(final ArrayList<Movie> movies) {
         if (!isIncreasing) {
             movies.sort(Comparator.comparingDouble(Movie::getRating).reversed());

@@ -9,6 +9,11 @@ public final class PageFactory {
 
     private PageFactory() { }
 
+    /**
+     * factory function, constructs pages which extend the Page abstract class
+     * @param pageType enum for all pages we can construct
+     * @return the newly created page
+     */
     public static Page createPage(final PageType pageType) {
         switch (pageType) {
             case Authenticated -> {

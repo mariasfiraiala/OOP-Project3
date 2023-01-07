@@ -12,6 +12,10 @@ public final class SortByDuration implements SortStrategy {
         this.isIncreasing = isIncreasing;
     }
 
+    /**
+     * sorts an array of movies based on their duration
+     * @param movies the array to be sorted
+     */
     public void sort(final ArrayList<Movie> movies) {
         if (!isIncreasing) {
             movies.sort(Comparator.comparingDouble(Movie::getDuration).reversed());

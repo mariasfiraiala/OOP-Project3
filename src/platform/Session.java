@@ -89,6 +89,11 @@ public final class Session {
         this.database = database;
     }
 
+    /**
+     * sets up the file from which we read the input
+     * @param inputFile file used for reading info from
+     * @throws IOException exception thrown at reading
+     */
     public void setupInput(final String inputFile) throws IOException {
         objectMapper = new ObjectMapper();
         output = objectMapper.createArrayNode();
@@ -122,6 +127,9 @@ public final class Session {
         }
     }
 
+    /**
+     * prints a recommendation notification in case the last user is premium
+     */
     public void finalRecommendation() {
         if (currentUser != null && currentUser.getCredentials().getAccountType().
                 compareTo("premium") == 0) {
@@ -139,6 +147,11 @@ public final class Session {
         instance = null;
     }
 
+    /**
+     * sets up the writing of the platform content in the output file
+     * @param outputFile file used for writing info to
+     * @throws IOException exception thrown at writing
+     */
     public void setupOutput(final String outputFile) throws IOException {
         objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
         objectWriter.writeValue(new File(outputFile), output);
