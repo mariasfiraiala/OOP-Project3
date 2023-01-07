@@ -1,4 +1,5 @@
 Starting audit...
+[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/pages/PageFactory.java:12:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/pages/SeeDetails.java:150:27: '5' is a magic number. [MagicNumber]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/pages/SeeDetails.java:174:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/pages/Upgrades.java:42:29: '10' is a magic number. [MagicNumber]
@@ -24,4 +25,4 @@ Starting audit...
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:125:5: Missing a Javadoc comment. [MissingJavadocMethod]
 [ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/platform/Session.java:142:5: Missing a Javadoc comment. [MissingJavadocMethod]
 Audit done.
-Checkstyle ends with 24 errors.
+Checkstyle ends with 25 errors.

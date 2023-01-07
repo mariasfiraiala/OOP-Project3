@@ -10,20 +10,20 @@ public final class PageHierarchy {
      * @return the root of our hierarchy, the "Logout" page
      */
     public static Page build() {
-        Authenticated authenticated = new Authenticated("authenticated",
-                List.of());
-        Login login = new Login("login",
-                List.of("login"));
-        Register register = new Register("register",
-                List.of("register"));
-        Movies movies = new Movies("movies",
-                List.of("search", "filter"));
-        SeeDetails seeDetails = new SeeDetails("see details",
-                List.of("purchase", "watch", "like", "rate", "subscribe"));
-        Upgrades upgrades = new Upgrades("upgrades",
-                List.of("buy premium account", "buy tokens"));
-        Logout logout = new Logout("logout",
-                List.of());
+        Authenticated authenticated = (Authenticated) PageFactory.createPage(PageFactory.
+                PageType.Authenticated);
+        Login login = (Login) PageFactory.createPage(PageFactory.
+                PageType.Login);
+        Register register = (Register) PageFactory.createPage(PageFactory.PageType.
+                Register);
+        Movies movies = (Movies) PageFactory.createPage(PageFactory.PageType.
+                Movies);
+        SeeDetails seeDetails = (SeeDetails) PageFactory.createPage(PageFactory.PageType.
+                SeeDetails);
+        Upgrades upgrades = (Upgrades) PageFactory.createPage(PageFactory.PageType.
+                Upgrades);
+        Logout logout = (Logout) PageFactory.createPage(PageFactory.PageType.
+                Logout);
 
         authenticated.setNextPages(List.of(movies, upgrades, logout));
         login.setNextPages(List.of(authenticated, logout));
