@@ -1,8 +1,0 @@
-Starting audit...
-[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/pages/SeeDetails.java:150:27: '5' is a magic number. [MagicNumber]
-[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/pages/Upgrades.java:42:29: '10' is a magic number. [MagicNumber]
-[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/pages/Upgrades.java:45:56: '10' is a magic number. [MagicNumber]
-[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/Test.java:9:28: Using the '.*' form of import should be avoided - java.util.concurrent.*. [AvoidStarImport]
-[ERROR] /home/maria/Documents/school-work/git-stuff/OOP-Project3.git/./src/info/User.java:12:40: '15' is a magic number. [MagicNumber]
-Audit done.
-Checkstyle ends with 5 errors.
