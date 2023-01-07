@@ -146,7 +146,7 @@ public final class Commands {
         if (currentMovies == null) {
             node.putPOJO("currentMoviesList", null);
         } else {
-            node.putPOJO("currentMoviesList", deepCopy(currentMovies));
+            node.putPOJO("currentMoviesList", deepCopyMovies(currentMovies));
         }
         node.putPOJO("currentUser", new User(currentUser));
         output.addPOJO(node);
@@ -157,7 +157,7 @@ public final class Commands {
      * @param movies the movies we want copied
      * @return the newly created list
      */
-    public static ArrayList<Movie> deepCopy(final ArrayList<Movie> movies) {
+    public static ArrayList<Movie> deepCopyMovies(final ArrayList<Movie> movies) {
         ArrayList<Movie> newMovies = new ArrayList<>();
 
         for (Movie movie : movies) {

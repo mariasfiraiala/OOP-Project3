@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="716ed340-6f59-4be0-add2-5d12509df1e5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/strategy/SortByDuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/strategy/SortByRating.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/strategy/SortStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OOP-Project3.git/commands/Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Project3.git/commands/Commands.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OOP-Project3.git/commands/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OOP-Project3.git/commands/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Recommendation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Recommendation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/Notification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input/ActionInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/ActionInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PageHierarchy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PageHierarchy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SeeDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SeeDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/platform/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/platform/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Movies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Movies.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -47,31 +42,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/maria/Documents/school-work/git-stuff/OOP-Project3.git&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/maria/Documents/school-work/OOP/tema1.git/oop-asignments-master/proiect1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.checker">
     <configuration name="checker" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="OOP-Project3.git" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test1" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="OOP-Project3.git" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/checker/resources/in/basic_1.json ceva1.json" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -84,10 +71,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test7" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="OOP-Project3.git" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/checker/resources/in/basic_7.json ceva7.json" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.checker" />
       <item itemvalue="Application.test10" />
-      <item itemvalue="Application.test1" />
+      <item itemvalue="Application.test7" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -106,6 +101,7 @@
       <workItem from="1672735730617" duration="732000" />
       <workItem from="1672740165109" duration="6526000" />
       <workItem from="1672751541857" duration="11023000" />
+      <workItem from="1673096546608" duration="4342000" />
     </task>
     <servers />
   </component>

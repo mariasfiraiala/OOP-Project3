@@ -37,11 +37,11 @@ public final class User extends UserInput {
         super(user);
         this.tokensCount = user.tokensCount;
         this.numFreePremiumMovies = user.numFreePremiumMovies;
-        this.visibleMovies = Commands.deepCopy(user.visibleMovies);
-        this.purchasedMovies = Commands.deepCopy(user.purchasedMovies);
-        this.watchedMovies = Commands.deepCopy(user.watchedMovies);
-        this.likedMovies = Commands.deepCopy(user.likedMovies);
-        this.ratedMovies = Commands.deepCopy(user.ratedMovies);
+        this.visibleMovies = Commands.deepCopyMovies(user.visibleMovies);
+        this.purchasedMovies = Commands.deepCopyMovies(user.purchasedMovies);
+        this.watchedMovies = Commands.deepCopyMovies(user.watchedMovies);
+        this.likedMovies = Commands.deepCopyMovies(user.likedMovies);
+        this.ratedMovies = Commands.deepCopyMovies(user.ratedMovies);
         this.notifications = Commands.deepCopyNotifications(user.notifications);
     }
 
